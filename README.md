@@ -20,5 +20,5 @@ Current DPAPP:
 2. More features still need to be added.
 3. Firebae auth needs to be added
 4. Experimenting with Flutter getting used to syntax
-   
-![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/dpapp_homepage.png)
+
+![DPAPP](assets/images/dpapp_homepage.png)
