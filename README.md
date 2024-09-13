@@ -19,8 +19,8 @@ Current DPAPP:
 1. More features still need to be added.
 2. Firebae auth needs to be added
    
-![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/homepage.png)
+![DPAPP](https://github.com/csalitred/dpapp/blob/main/assets/images/homepage.png)
 
-![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/menu.png)
+![DPAPP](https://github.com/csalitred/dpapp/blob/main/assets/images/login.png)
 
-![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/login.png)
+![DPAPP](https://github.com/csalitred/dpapp/blob/main/assets/images/menu.png)
