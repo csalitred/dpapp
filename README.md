@@ -16,9 +16,11 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 Current DPAPP:
-1. Need to add Login/Sign in Page
-2. More features still need to be added.
-3. Firebae auth needs to be added
-4. Experimenting with Flutter getting used to syntax
+1. More features still need to be added.
+2. Firebae auth needs to be added
    
-![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/dpapp_homepage.png)
+![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/homepage.png)
+
+![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/menu.png)
+
+![DPAPP](https://github.com/csalitred/dpapp/blob/csalitre/assets/images/login.png)
