@@ -1,73 +1,44 @@
-// screens/settings_screen.dart
 import 'package:flutter/material.dart';
 
-class SettingsScreen extends StatefulWidget {
-  @override
-  _SettingsScreenState createState() => _SettingsScreenState();
-}
-
-class _SettingsScreenState extends State<SettingsScreen> {
-  bool _notificationsEnabled = true;
-  bool _biometricAuthEnabled = false;
-  String _selectedLanguage = 'English';
-  bool _darkModeEnabled = false;
-
+class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Settings'),
-      ),
+      appBar: AppBar(title: Text('Settings')),
       body: ListView(
         children: [
           ListTile(
             title: Text('Notifications'),
-            subtitle: Text('Enable or disable app notifications'),
             trailing: Switch(
-              value: _notificationsEnabled,
+              value: true,
               onChanged: (bool value) {
-                setState(() {
-                  _notificationsEnabled = value;
-                });
+                // TODO: Implement notification toggle
               },
             ),
           ),
-          Divider(),
           ListTile(
-            title: Text('Biometric Authentication'),
-            subtitle: Text('Use fingerprint or face ID to unlock the app'),
+            title: Text('Dark Mode'),
             trailing: Switch(
-              value: _biometricAuthEnabled,
+              value: false,
               onChanged: (bool value) {
-                setState(() {
-                  _biometricAuthEnabled = value;
-                });
+                // TODO: Implement dark mode toggle
               },
             ),
           ),
-          Divider(),
           ListTile(
-            title: Text('Language'),
-            subtitle: Text('Select your preferred language'),
-            trailing: DropdownButton<String>(
-              value: _selectedLanguage,
-              onChanged: (String? newValue) {
-                if (newValue != null) {
-                  setState(() {
-                    _selectedLanguage = newValue;
-                  });
-                }
-              },
-              items: <String>['English', 'Spanish', 'French', 'German']
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-            ),
+            title: Text('Account'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              // TODO: Navigate to account settings
+            },
           ),
-          // ... (rest of the settings options)
+          ListTile(
+            title: Text('About'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              // TODO: Show about dialog
+            },
+          ),
         ],
       ),
     );

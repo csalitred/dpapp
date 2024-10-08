@@ -1,4 +1,3 @@
-// screens/reset_password_screen.dart
 import 'package:flutter/material.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
@@ -6,14 +5,20 @@ class ResetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Reset Password')),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             TextField(decoration: InputDecoration(labelText: 'Email')),
+            SizedBox(height: 20),
             ElevatedButton(
-              child: Text('Send Reset Link'),
+              child: Text('Reset Password'),
               onPressed: () {
+                // TODO: Implement password reset logic
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Password reset email sent')),
+                );
                 Navigator.pop(context);
               },
             ),
