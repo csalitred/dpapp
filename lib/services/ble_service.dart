@@ -2,6 +2,8 @@ import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class BLEService {
+  FlutterBluePlus flutterBlue = FlutterBluePlus.instance;
+
   Future<bool> requestPermissions() async {
     Map<Permission, PermissionStatus> statuses = await [
       Permission.bluetooth,
@@ -17,17 +19,21 @@ class BLEService {
       throw Exception('BLE permissions not granted');
     }
 
-    if (!await FlutterBluePlus.isAvailable) {
+    if (!await flutterBlue.isAvailable) {
       throw Exception('Bluetooth not available on this device');
     }
 
-    await FlutterBluePlus.turnOn();
+    await flutterBlue.turnOn();
 
-    await FlutterBluePlus.startScan(timeout: Duration(seconds: 4));
+    List<ScanResult> results = [];
 
-    var results = await FlutterBluePlus.scanResults.first;
+    flutterBlue.scanResults.listen((scanResults) {
+      results = scanResults;
+    });
 
-    await FlutterBluePlus.stopScan();
+    await flutterBlue.startScan(timeout: Duration(seconds: 4));
+    await Future.delayed(Duration(seconds: 4));
+    await flutterBlue.stopScan();
 
     return results;
   }
@@ -40,8 +46,7 @@ class BLEService {
     await device.disconnect();
   }
 
-  Stream<BluetoothConnectionState> getDeviceStateStream(
-      BluetoothDevice device) {
-    return device.connectionState;
+  Stream<BluetoothDeviceState> getDeviceStateStream(BluetoothDevice device) {
+    return device.state;
   }
 }

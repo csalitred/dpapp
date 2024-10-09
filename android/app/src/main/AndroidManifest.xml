@@ -6,6 +6,7 @@
     <!-- For Android 12 and above, you also need these -->
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.hardware.bluetooth_le" android:required="true" />
 
     <application
         android:label="dpapp"
